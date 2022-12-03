@@ -1,0 +1,95 @@
+
+\documentclass[oneside,11pt]{article}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+%\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{rotating}
+\usepackage{url}
+\usepackage{float}
+\usepackage{mathptmx}
+\usepackage{titlesec}
+\usepackage[compress]{natbib}
+\usepackage{indentfirst}
+\floatstyle{plaintop}
+\usepackage{indentfirst}
+\usepackage{sectsty}
+\usepackage[font=footnotesize, labelfont={sf,bf}]{caption}
+
+\usepackage[top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}% An macro that you may use frequently is the figuremacro (see introduction.tex)
+%\include{Latex/Macros/MacroFile1}
+
+\newtheorem{definition}{Definition}
+\linespread{1}
+\titlespacing{\section}{0pt}{11pt}{-\parskip}
+\sectionfont{\fontsize{11}{11}\selectfont}
+\subsectionfont{\fontsize{11}{11}\selectfont}
+
+\begin{document}
+
+\section{Research project objectives/ Research hypotheses} 
+\vspace{-0.3cm}
+\textbf{The main goal of the SAmaRco project is to construct algorithms based on statistical tests for determining
+differentially expressed genes, taking into account both gene expression levels and the relationship
+(different correlation coefficients) between them.} For this purpose, one should focus on genes with the highest
+differences in gene expression values between samples and at the same time with the lowest correlation coefficients
+between other significant genes. These statistical tests will enable the analysis of both microarray and RNA-seq
+data. They will help researchers find interesting significant genes that can be most efficient in classifying samples
+(e.g. healthy - sick). The examination of correlations between genes will involve taking into account different factors
+commonly used in the construction of co-expression networks such as mutual information, Spearman’s rank
+correlation, the Euclidean distance, partial correlation, the Gini coefficient and the Kendall ratio. In addition, in
+the classification process one wants to avoid selecting groups of highly correlated genes as such genes do not bring
+much additional information in relation to the subsequent classification. It also means that they generate similar
+errors when the cross-validation method is applied. However, the simplest significance analysis, based on the assumption
+that the lowest correlation coefficient between significant genes is desired, has not been used yet, to the
+best of our knowledge.\textbf{The second objective focuses on the comparison of the effectiveness of existing methods
+with the proposed statistical tests used in the gene selection problem.} On the basis of preliminary studies,
+we can conclude that taking into account the correlation effect between values of gene expression has a significant
+impact on discriminant analysis. The main hypotheses of the research project are as follows: the selection method
+in which weak correlations between significant gene expression measurements are taken into account can improve
+the performance of discriminant analysis and there is a correlation coefficient which can increase the efficiency of
+sample classification when used during the selection process.
+
+\section{Research project methodology} 
+\vspace{-0.3cm}
+Work done in the SAMaRco project will draw on the experience gained when the research I did for my PhD
+dissertation, a large part of which I conducted at the Uniformed Services University of Health Sciences in Washington
+and in the Functional Genomic Center in Zurich. During both visits I was responsible for the application
+of statistical methods in the selection process in microarray and RNA-seq experiments. In addition, I will also
+rely on the experience of Dr Michal Okoniewski from ETH in Zurich. An important part of the SAMaRco project
+will consist in running microarray and RNA-seq data simulations in order to create data with specific correlation
+structures and with known classes. Also, a statistical model will be proposed, which will be used in the subsequent
+analysis of microarray and RNA-seq data. This model will provide the basis for the construction of test procedures.
+The proposed statistical test design will make use of expression values and values of correlation (various measures
+of correlation will be investigated) between genes expression levels. In these tests preference will be given to genes
+with the highest differences in expression levels between classes and at the same time the lowest coefficients of
+correlation between expression levels. Novel test statistics will be validated by means of the following classifiers:
+naive Bayes, neural network, nearest neighbor, support vector machine and random forest. Leave One Out Cross
+Validation will be used to calculate prediction errors. At the end, new statistical tests will be compared with existing
+statistics methods normally used for this purpose. This comparison will include both traditional tests and the ones
+that account for the correlation structure. The analysis will be carried out using the ROC curve, AUC values and
+diagnostic plots. All analyses will be carried out using the R free software (ver. 3.2.0) and BioConductor platforms
+dedicated to statistical analysis for genetic data.
+\section{Expected impact of the research project on the development of science, civilization and society} 
+\vspace{-0.3cm}
+Through this project I will develop a detailed methodology of analysis for large datasets taking into account
+the correlation structure. The present study will expand the knowledge about the influence of correlation factors
+on the development of statistical methods for the gene selection problem. My study can provide the basis for the
+future development of statistical selection methods for microarrays and RNA-seq data. It will make it possible
+to reduce matrix dimensions of input data for classifiers and improve their performance in the prediction process.
+This innovative approach can contribute to the knowledge of statistical testing procedures which account for the
+correlation structure between gene expression values.
+	
+
+ % Title is link if provided
+\renewcommand{\bibname}{Literature references}
+ % changes the header; default: 
+\titlespacing{\section}{0pt}{12pt}{0pt}
+\bibliography{references}
+\bibliographystyle{apa}
+
+\end{document}
+

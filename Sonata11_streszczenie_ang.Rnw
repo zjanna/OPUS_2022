@@ -1,0 +1,51 @@
+
+\documentclass[oneside,11pt]{article}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[T1]{fontenc}
+%\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{array}
+\usepackage{rotating}
+\usepackage{url}
+\usepackage{float}
+\usepackage{mathptmx}
+\usepackage{titlesec}
+\usepackage[compress]{natbib}
+\usepackage{indentfirst}
+\floatstyle{plaintop}
+\usepackage{indentfirst}
+\usepackage{sectsty}
+\usepackage[font=footnotesize, labelfont={sf,bf}]{caption}
+
+\usepackage[top=1.5cm, bottom=1.5cm, left=2cm, right=2cm]{geometry}% An macro that you may use frequently is the figuremacro (see introduction.tex)
+%\include{Latex/Macros/MacroFile1}
+
+\newtheorem{definition}{Definition}
+\linespread{1}
+\titlespacing{\section}{0pt}{11pt}{-\parskip}
+\sectionfont{\fontsize{11}{11}\selectfont}
+\subsectionfont{\fontsize{11}{11}\selectfont}
+
+\begin{document}
+\section{Research project objectives/ Research hypotheses} 
+\vspace{-0.3cm}
+\textbf{Głównym celem projektu jest konstrukcja testów statystycznych zawierających informacje dotyczącej wartości ekspresji dla genów oraz korelacji pomiędzy nimi.} Testy te będą zarówno dla danych mikromacierzowych jak i RNA-seq. Dzięki nim badacz wyselekcjonuje takie geny, które dawałyby najlepszą efektywność predykcji jednostek do danej klasy (np. zdrowy - chory). Badając korelację pomiędzy genami uwzględnione zostaną różne współczynniki wykorzystywane przy budowie sieci koekspresji (tj. informacja wzajemna, korelacja rang Spearmana, odległość Euklidesowa, korelacja cząstkowa, analiza regresji, współczynnik Giniego oraz wspólczynnik Kendalla). Uwzglądniając założenie wykorzystane w pracy  Alvo i in., (2010), mówiace o tym, że geny, które są ze sobą w wysokiej korelacji, należą do tej samej, bądź pełniącej podobne funkcje w organiźmie ścieżki. W procesie klasyfikacji chcemy uniknąć selekcji tych właśnie wzajemnie wysoko skorelowanych genów, gdyż geny, których wzajemna korelacja jest wysoka nie wnoszą zbyt dużo dodatkowej informacji w odniesieniu do późniejszej klasyfikacji i generują podobne błędy podczas zastosowania metody walidacji krzyżowej. Według wiedzy aplikanta nie istnieją w literaturze metody, które uwzględniałyby w ten właśnie sposób zarówno wielkość korelacji pomiędzy poziomami ekspresji, jak i wartości samych poziomów ekpresji.  Cel drugi polega na sprawdzeniu efektywności wprowadzonych metod oraz porównaniu efektywności metod już istniejących z zaproponowanymi testami statystycznymi. Na podstawie wstępnych badań możemy stwierdzić, że uwzględnienie efektu korelacji pomiędzy wartościami ekspresji genów ma znaczący wpływ na analizę dyskryminacyjną. Niniejszy projekt ma na celu zbadanie następującej hipotezy badawczej: uwzględnienie efektu zależności (interesujące są geny z jak największą różnicą pomiędzy wartościami ekspresji genów pomiędzy próbami w danych klasach i jednocześnie z jak najmniejszym współczynnikiem zależności pomiędzy nimi) pomiędzy wartościami ekspresji genów polepszy predykcje prób do danych klas.
+
+\section{Research project methodology} 
+\vspace{-0.3cm}
+W projekcie mam zamiar wykorzystać doświadczenie jakie zdobyłam wykonując badania do mojej pracy doktorskiej, którą w dużej części wykonałam w jednostce badawczej w Waszyngtonie (Uniformed Services University of the Health Sciences) oraz w Zurychu (Functional Genomic Center Zurich). Podczas obu pobytów zajmowałam się zastosowaniem metod statystycznych w selekcji genów różnicujących bazując na danych zarówno mikromacierzowych, jak i tych, które pochodzą z eksperymentu RNA-seq. Ponadto, zostanie wykorzystane doświadczenie dr Michała Okoniewskiego z ETH Zurich, którego planowane zadanie w projekcie to rola konsultanta naukowego strony bioinformatycznej oraz programistycznych aspektów przetwarzania danych RNA-seq. W projekcie wykorzystane zostaną metody symulacyjne w celu stworzenia danych o określonych strukturach korelacji oraz znanym podziale na klasy.  Zaproponowany zostanie model statystyczny wykorzystany w późniejszej  analizie danych mikromacierzowych i RNA-seq.  Zaproponowana zostanie konstrukcja testów statystycznych bazujących zarówno na wartościach ekspresji, jak i wartościach korelacji (sprawdzone zostaną różne miary badające korelację) pomiędzy tymi poziomami (preferowane będą te geny, które mają jak największe różnice w poziomach ekspresji pomiędzy klasami i równocześnie najmniejsze współczynniki korelacji pomiędzy poziomami ekspresji). W celu walidacji wyników zastosowane zostaną różne metody uczenia maszyn oraz zastosowana zostanie walidacja krzyżowa typu LOOCV.  Na zakończenie porównane zostaną istniejące statystyki testowe zarówno te, które uwzględniają korelację, jak i te tradycyjne. Porównanie przeprowadzone będzie na różnych płaszczyznach. Wyznaczone zostaną błędy predykcji dla zastosowania każdej metody, krzywe ROC, ilości genów fałszywie pozytywnych itd. Na wszystkich etapach  analiz jako narzędzie będzie wykorzystywany sprzęt komputerowy o wysokiej wydajności oraz  platforma statystyczna R. 
+\section{Expected impact of the research project on the development of science, civilization and society} 
+\vspace{-0.3cm}
+Projekt ten ma na celu rozwinięcie szczegółowej metodologii dotyczącej analizy danych dużych rozmiarów, biorąc pod uwagę strukturę korelacji. Niniejsze badanie poszerzy wiedzę na temat wpływu czynników korelacji na rozwój metod statystycznych do problemu selekcji genów. Moje badania będą stanowiły podstawę do dalszego rozwoju  statystycznych metod selekcji dla mikromacierzy, a także dla danych RNA-seq. Pozwoli to na zmniejszenie błędów predykcji podczas kwalifikacji prób do danych klas (np. osób, które są chore bądź nie). Podejście to rozszerzy wiedzę na temat procedur statystycznego testowania z uwzględnieniem korelacji. Powstałe w ramach projektu oprogramowanie będzie dostępne w postaci open source i składowane w ogólnodostępnym repozytorium. Tym samym będzie mogło zostać użyte do wykonanywania analizy zarówno mikromacierzowych, jak i zsekwencjonowanych danych w badaniach biologicznych bądź medycznych. Spodziewanym rezultatem projektu są pakiety napisane w języku R oraz publikacje w renomowanych czasopismach. 
+	
+ % Title is link if provided
+\renewcommand{\bibname}{Literature references}
+ % changes the header; default: 
+\titlespacing{\section}{0pt}{12pt}{0pt}
+\bibliography{references}
+\bibliographystyle{apa}
+
+
+\end{document}
